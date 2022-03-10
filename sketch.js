@@ -34,53 +34,22 @@ function draw() {
    drawSprites();
    
   
- var select_sprites = Math.round(random(1,3));
-
- var select_sprites = Math.round(random(1,3));
-
- var select_sprites = Math.round(random(1,3));
-
- var select_sprites = Math.round(random(1,3));
-
+ var select_sprites = Math.round(random(1,4));
   
-   if (frameCount % 50 == 0) {
+   if (frameCount % 80 == 0) {
      if (select_sprites == 1) {
        createApples();
      } else if (select_sprites == 2) {
        createOrange();
-     }else
+     }else if (select_sprites == 3){
       createRed();
-    }
-
-   if (frameCount % 80 == 0) {
-     if (select_sprites == 1) {
-       createApples();
-    } else if (select_sprites == 2) {
-       createOrange();
      }
-      else
-      createRed();
+      else{
+        createGreen();
+      }
+      
     }
 
-   if (frameCount % 80 == 0) {
-     if (select_sprites == 1) {
-       createApples();
-    } else if (select_sprites == 2){
-       createOrange();
-    }
-       else
-       createRed();
-    }
-
-   if (frameCount % 80 == 0) {
-     if (select_sprites == 1) {
-      createApples();
-    } else if (select_sprites == 2){
-      createOrange();
-    } else
-     createRed();
-    }  
-  
 }
 
 function createApples() {
@@ -109,4 +78,13 @@ redL.scale = 0.06;
   redL.rotationSpeed = random(-2,2); 
   redL.velocityY = 3;
   redL.lifetime = 150;
+}
+
+  function createGreen() {
+    greenL = createSprite(random(50, 350),40, 10, 10);
+    greenL.addImage(greenImg);
+    greenL.scale = 0.06;
+      greenL.rotationSpeed = random(-2,2);
+      greenL.velocityY = 3;
+      greenL.lifetime = 150;
 }
